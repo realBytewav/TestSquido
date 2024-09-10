@@ -1,0 +1,16 @@
+#Unity
+ProtoUnityProject/Library/
+ProtoUnityProject/Temp/
+ProtoUnityProject/UserSettings/
+ProtoUnityProject/Logs/
+ProtoUnityProject/obj
+
+#IDE
+*.vs
+*.vsconfig
+*.vscode
+*.sln
+*.sln.DotSettings
+*.csproj
+*.idea
+*.user
