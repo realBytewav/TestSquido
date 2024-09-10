@@ -1,9 +1,9 @@
 #Unity
-ProtoUnityProject/Library/
-ProtoUnityProject/Temp/
-ProtoUnityProject/UserSettings/
-ProtoUnityProject/Logs/
-ProtoUnityProject/obj
+Library/
+Temp/
+UserSettings/
+Logs/
+obj/
 
 #IDE
 *.vs
