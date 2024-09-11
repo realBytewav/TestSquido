@@ -5,7 +5,7 @@ namespace Squido {
     // Responsible for controlling Camera direction
     [RequireComponent(typeof(Camera))]
     public class FirstPersonCameraController : MonoBehaviour {
-        private static readonly float EPSILON = 1e-6f;
+        private static readonly float EPSILON = 1e-4f;
         private static readonly float TAU = 6.283185307179586f;
         private static readonly float PI = 3.141592653589793f;
         private static readonly float HALF_PI = 1.5707963267948966f;
@@ -34,16 +34,6 @@ namespace Squido {
         // | Latitude | Longitude
         // | theta θ  | phi φ
         private static Vector3 SphericalToVector(float theta, float phy) {
-            //  wrap around 0 to max_value
-            void wrapRadian(ref float value, float max_value) {
-                while (theta < 0f)
-                    value += max_value;
-
-                value %= max_value;
-            }
-            //wrapRadian(ref theta, TAU);
-            //wrapRadian(ref phy, TAU);
-
             return new Vector3(
                 Mathf.Sin(theta),
                 Mathf.Sin(theta) * Mathf.Sin(phy),

@@ -7,7 +7,9 @@ namespace Squido {
         public bool Left();
         public bool Right();
         public bool Jump();
+        public bool HoldingThrow();
         public bool Throw();
+        public bool Pick();
         public float CameraAxisHorizontal();
         public float CameraAxisVertical();
     }

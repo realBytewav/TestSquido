@@ -3,12 +3,32 @@ namespace Squido {
     using SF = UnityEngine.SerializeField;
 
     public class Goal : MonoBehaviour {
-        public void GameUpdate(GameScore score) {
-            bool DetectGoal() { return false;}
+        private static readonly string BALL_TAG = "Ball"; // Tag of the ball
+        private GameScore score;
+        public void GameStart(GameScore score) {
+            this.score = score;
+        }
 
-            if (DetectGoal())
-                score.GrantPoints(1);
+        void OnTriggerEnter(Collider other) {
+            Debug.Log("OnTriggerEnter");
+            if (!other.CompareTag(BALL_TAG)){
+                Debug.Log("Not ball");
+                return;
+            }
+
+            Ball ball = other.GetComponent<Ball>();
+            if (ball == null){
+                Debug.Log("No ball Component");
+                return;
+            }
+
+            if (!ball.IsGoingDown()) {
+                Debug.Log("Not going down");
+                return;
+            }
+
+            Debug.Log("GrantPoints");
+            score.GrantPoints(1);
         }
     }
 }
-
